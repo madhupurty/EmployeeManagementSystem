@@ -12,32 +12,32 @@
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Option 1: Run with Docker (Recommended)](#option-1-run-with-docker-recommended)
   - [Option 2: Run Locally](#option-2-run-locally)
-- [API Documentation](#-api-documentation)
-- [API Endpoints](#-api-endpoints)
-- [Authentication](#-authentication)
-- [Testing](#-testing)
-- [Deployment](#-deployment)
-- [Project Phases](#-project-phases)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [API Documentation](#api-documentation)
+- [API Endpoints](#api-endpoints)
+- [Authentication](#authentication)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Project Phases](#project-phases)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## 🎯 Overview
+## Overview
 
 The **Employee Management System** is a comprehensive enterprise backend application designed to manage employee lifecycle, departments, leave requests, and attendance tracking. Built following industry best practices with a focus on security, scalability, and maintainability.
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Modules
 - ✅ **Employee Management** - CRUD operations with pagination, sorting, and search
@@ -59,7 +59,7 @@ The **Employee Management System** is a comprehensive enterprise backend applica
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |----------|------------|
@@ -76,7 +76,7 @@ The **Employee Management System** is a comprehensive enterprise backend applica
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 EmployeeManagementSystem/
@@ -106,7 +106,7 @@ EmployeeManagementSystem/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -229,7 +229,7 @@ java -jar target/EmployeeManagementSystem-0.0.1-SNAPSHOT.jar
 
 ---
 
-## 📖 API Documentation
+## API Documentation
 
 Once the application is running, access the interactive API documentation:
 
@@ -239,7 +239,7 @@ Once the application is running, access the interactive API documentation:
 
 ---
 
-## 🔗 API Endpoints
+## API Endpoints
 
 ### Authentication
 | Method | Endpoint | Description | Access |
@@ -283,7 +283,7 @@ Once the application is running, access the interactive API documentation:
 
 ---
 
-## 🔐 Authentication
+## Authentication
 
 ### Register a new user
 ```bash
@@ -327,7 +327,7 @@ curl -X GET http://localhost:8080/api/employees \
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Run all tests
 ```bash
@@ -352,7 +352,7 @@ mvn jacoco:report
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
 ### Docker Deployment (Local/Server)
 ```bash
@@ -368,7 +368,7 @@ See [PHASE6_DEPLOYMENT.md](src/main/resources/docs/PHASE6_DEPLOYMENT.md) for det
 
 ---
 
-## 📈 Project Phases
+## Project Phases
 
 | Phase | Description | Status |
 |-------|-------------|--------|
@@ -433,7 +433,7 @@ git push
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
@@ -443,7 +443,7 @@ git push
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
