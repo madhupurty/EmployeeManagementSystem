@@ -1,0 +1,68 @@
+# =============================================================================
+# DOCKER IGNORE FILE
+# =============================================================================
+# Excludes files from Docker build context for faster builds and smaller images
+
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+*.iml
+.vscode
+*.swp
+*.swo
+.project
+.classpath
+.settings
+
+# Maven
+target/
+!target/*.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files (prevent recursive copy)
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Documentation
+*.md
+docs/
+
+# Test files (not needed in production image)
+src/test/
+
+# Environment files (contain secrets)
+.env
+.env.*
+*.env
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build artifacts
+*.class
+*.jar
+!target/*.jar
+
+# Node modules (if any frontend)
+node_modules/
+
+# Coverage reports
+coverage/
+.nyc_output/

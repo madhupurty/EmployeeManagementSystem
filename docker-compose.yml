@@ -1,0 +1,137 @@
+# =============================================================================
+# DOCKER COMPOSE - Employee Management System
+# =============================================================================
+#
+# This file defines the multi-container setup for the EMS application:
+# 1. ems-app: Spring Boot application
+# 2. ems-mysql: MySQL database
+#
+# USAGE:
+#   Start:   docker-compose up -d
+#   Stop:    docker-compose down
+#   Logs:    docker-compose logs -f
+#   Rebuild: docker-compose up -d --build
+#
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # ===========================================================================
+  # MYSQL DATABASE SERVICE
+  # ===========================================================================
+  ems-mysql:
+    image: mysql:8.0
+    container_name: ems-mysql
+    restart: unless-stopped
+    
+    # Environment variables for MySQL setup
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-employee_management_db}
+      MYSQL_USER: ${MYSQL_USER:-emsuser}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-emspassword}
+    
+    # Port mapping (host:container)
+    ports:
+      - "3307:3306"  # Use 3307 to avoid conflict with local MySQL
+    
+    # Persistent volume for database data
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d  # Init scripts
+    
+    # Health check for database
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-rootpassword}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    
+    # Network
+    networks:
+      - ems-network
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # ===========================================================================
+  # SPRING BOOT APPLICATION SERVICE
+  # ===========================================================================
+  ems-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ems-app
+    restart: unless-stopped
+    
+    # Environment variables for Spring Boot
+    environment:
+      # Active profile
+      SPRING_PROFILES_ACTIVE: prod
+      
+      # Database connection
+      SPRING_DATASOURCE_URL: jdbc:mysql://ems-mysql:3306/${MYSQL_DATABASE:-employee_management_db}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER:-emsuser}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD:-emspassword}
+      
+      # JPA settings
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "false"
+      
+      # JWT settings (use secure values in production!)
+      JWT_SECRET: ${JWT_SECRET:-cHJvZHVjdGlvblNlY3JldEtleUZvckVNU0FwcGxpY2F0aW9uMjAyNlByb2R1Y3Rpb24=}
+      JWT_EXPIRATION: ${JWT_EXPIRATION:-86400000}
+      
+      # Server settings
+      SERVER_PORT: 8080
+      
+      # Logging
+      LOGGING_LEVEL_ROOT: INFO
+      LOGGING_LEVEL_COM_EMS: INFO
+    
+    # Port mapping
+    ports:
+      - "8080:8080"
+    
+    # Dependency on database
+    depends_on:
+      ems-mysql:
+        condition: service_healthy
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    # Network
+    networks:
+      - ems-network
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+# =============================================================================
+# NETWORKS
+# =============================================================================
+networks:
+  ems-network:
+    driver: bridge
+    name: ems-network
+
+# =============================================================================
+# VOLUMES
+# =============================================================================
+volumes:
+  mysql_data:
+    name: ems-mysql-data
