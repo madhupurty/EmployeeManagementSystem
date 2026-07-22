@@ -128,7 +128,7 @@ This is the easiest way to run the project with all dependencies.
 
 #### Step 1: Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/EmployeeManagementSystem.git
+git clone https://github.com/madhupurty/EmployeeManagementSystem.git
 cd EmployeeManagementSystem
 ```
 
@@ -172,7 +172,7 @@ docker-compose down -v
 
 #### Step 1: Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/EmployeeManagementSystem.git
+git clone https://github.com/madhupurty/EmployeeManagementSystem.git
 cd EmployeeManagementSystem
 ```
 
@@ -409,7 +409,7 @@ git add .
 git commit -m "Initial commit: Employee Management System - Complete Implementation"
 
 # Add remote repository (replace YOUR_USERNAME with your GitHub username)
-git remote add origin https://github.com/YOUR_USERNAME/EmployeeManagementSystem.git
+git remote add origin https://github.com/madhupurty/EmployeeManagementSystem.git
 
 # Push to GitHub
 git branch -M main
@@ -453,8 +453,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Madhu Purty**
 
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
+- GitHub: [@madhupurty](https://github.com/madhupurty)
+- LinkedIn: [Madhu Purty](https://linkedin.com/in/madhupurty)
 
 ---
 
