@@ -7,35 +7,35 @@
 
 ## 📋 Table of Contents
 
-1. [How to Brief/Explain the Project](#how-to-briefexplain-the-project)
-2. [Quick Project Summary (30 Seconds Pitch)](#quick-project-summary-30-seconds-pitch)
-3. [Detailed Project Explanation (2-3 Minutes)](#detailed-project-explanation-2-3-minutes)
+1. [How to Brief Explain the Project](#how-to-brief-explain-the-project)
+2. [Quick Project Summary 30 Seconds Pitch](#quick-project-summary-30-seconds-pitch)
+3. [Detailed Project Explanation 2-3 Minutes](#detailed-project-explanation-2-3-minutes)
 4. [Interview Questions by Category](#interview-questions-by-category)
    - [Project Overview Questions](#1-project-overview-questions)
-   - [Architecture & Design Questions](#2-architecture--design-questions)
+   - [Architecture and Design Questions](#2-architecture-and-design-questions)
    - [Spring Boot Questions](#3-spring-boot-questions)
-   - [Spring Security & JWT Questions](#4-spring-security--jwt-questions)
-   - [Database & JPA Questions](#5-database--jpa-questions)
+   - [Spring Security and JWT Questions](#4-spring-security-and-jwt-questions)
+   - [Database and JPA Questions](#5-database-and-jpa-questions)
    - [REST API Design Questions](#6-rest-api-design-questions)
    - [Exception Handling Questions](#7-exception-handling-questions)
    - [Testing Questions](#8-testing-questions)
-   - [Docker & Deployment Questions](#9-docker--deployment-questions)
-   - [Performance & Optimization Questions](#10-performance--optimization-questions)
+   - [Docker and Deployment Questions](#9-docker-and-deployment-questions)
+   - [Performance and Optimization Questions](#10-performance-and-optimization-questions)
    - [Scenario-Based Questions](#11-scenario-based-questions)
    - [Code-Level Questions](#12-code-level-questions)
-   - [Behavioral/Experience Questions](#13-behavioralexperience-questions)
+   - [Behavioral Experience Questions](#13-behavioral-experience-questions)
 
 ---
 
-## How to Brief/Explain the Project
+## How to Brief Explain the Project
 
-### 🎤 Quick Project Summary (30 Seconds Pitch)
+### Quick Project Summary 30 Seconds Pitch
 
 > "I developed an **Enterprise Employee Management System** - a production-ready backend application using **Java 21** and **Spring Boot 3**. The system handles employee lifecycle management including **CRUD operations**, **department management**, **leave requests**, and **attendance tracking**. I implemented **JWT-based authentication** with **role-based access control** supporting three roles: Admin, HR, and Employee. The application follows a **layered architecture** with proper separation of concerns, includes comprehensive **unit and integration tests** using JUnit 5 and Mockito, and is **containerized using Docker** for easy deployment. The APIs are documented using **Swagger/OpenAPI**."
 
 ---
 
-### 📝 Detailed Project Explanation (2-3 Minutes)
+### Detailed Project Explanation 2-3 Minutes
 
 > "Let me walk you through the Employee Management System I developed. This is an **enterprise-grade backend application** built using **Java 21** and **Spring Boot 3**.
 >
@@ -137,7 +137,7 @@
 
 ---
 
-## 2. Architecture & Design Questions
+## 2. Architecture and Design Questions
 
 ### Q7: Explain the architecture of your application.
 **Answer:**
@@ -338,7 +338,7 @@
 
 ---
 
-## 4. Spring Security & JWT Questions
+## 4. Spring Security and JWT Questions
 
 ### Q21: Explain your security implementation.
 **Answer:**
@@ -538,7 +538,7 @@
 
 ---
 
-## 5. Database & JPA Questions
+## 5. Database and JPA Questions
 
 ### Q31: Why did you choose MySQL?
 **Answer:**
@@ -1227,7 +1227,7 @@
 
 ---
 
-## 9. Docker & Deployment Questions
+## 9. Docker and Deployment Questions
 
 ### Q57: Explain your Docker setup.
 **Answer:**
@@ -1366,7 +1366,7 @@
 
 ---
 
-## 10. Performance & Optimization Questions
+## 10. Performance and Optimization Questions
 
 ### Q62: How would you optimize database queries?
 **Answer:**
@@ -1732,7 +1732,7 @@
 
 ---
 
-## 13. Behavioral/Experience Questions
+## 13. Behavioral Experience Questions
 
 ### Q74: Why did you choose to build this project?
 **Answer:**
